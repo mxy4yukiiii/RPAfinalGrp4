@@ -95,26 +95,26 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Workflow_MK" sap:VirtualizedContainerService.HintSize="1068.6666666666667,2127.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Workflow_MK" sap:VirtualizedContainerService.HintSize="1068.6666666666667,2244.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:ReadTextFile Content="{x:Null}" File="{x:Null}" DisplayName="Read Text File" FileName="EmailTemplate.txt" sap:VirtualizedContainerService.HintSize="642,114" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
-    <umab:OutlookApplicationCard Account="MWANG022@e.ntu.edu.sg" AccountMismatchBehavior="UseDefaultEmailAccount" DisplayName="Use Desktop Outlook App" sap:VirtualizedContainerService.HintSize="642,1990.6666666666667" sap2010:WorkflowViewState.IdRef="OutlookApplicationCard_1">
+    <umab:OutlookApplicationCard Account="MWANG022@e.ntu.edu.sg" AccountMismatchBehavior="UseDefaultEmailAccount" DisplayName="Use Desktop Outlook App" sap:VirtualizedContainerService.HintSize="642,2108" sap2010:WorkflowViewState.IdRef="OutlookApplicationCard_1">
       <umab:OutlookApplicationCard.Body>
         <ActivityAction x:TypeArguments="um:IMailQuickHandle">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Outlook" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="608,1780" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="608,1897.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <umab:ForEachEmailX MailFilter="{x:Null}" DisplayName="For Each Email" sap:VirtualizedContainerService.HintSize="574,1720" sap2010:WorkflowViewState.IdRef="ForEachEmailX_1" IncludeSubfolders="False" Mails="[Outlook.Folder(&quot;Inbox&quot;)]" NumberOfEmailsLimit="1" UnreadOnly="True" WithAttachmentsOnly="False">
+            <umab:ForEachEmailX MailFilter="{x:Null}" DisplayName="For Each Email" sap:VirtualizedContainerService.HintSize="574,1837.3333333333333" sap2010:WorkflowViewState.IdRef="ForEachEmailX_1" IncludeSubfolders="False" Mails="[Outlook.Folder(&quot;Inbox&quot;)]" NumberOfEmailsLimit="1" UnreadOnly="True" WithAttachmentsOnly="False">
               <umab:ForEachEmailX.Body>
                 <ActivityAction x:TypeArguments="snm:MailMessage, x:Int32">
                   <ActivityAction.Argument1>
@@ -123,22 +123,22 @@
                   <ActivityAction.Argument2>
                     <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                   </ActivityAction.Argument2>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="540,1425.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="540,1542.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[CurrentMail.Subject.Contains(&quot;AN6817&quot;)]" sap:VirtualizedContainerService.HintSize="506,1365.3333333333333" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If Condition="[CurrentMail.Subject.Contains(&quot;AN6817&quot;)]" sap:VirtualizedContainerService.HintSize="506,1482.6666666666667" sap2010:WorkflowViewState.IdRef="If_1">
                       <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="504,1144" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="504,1261.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_6">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <umab:MoveMailX DisplayName="Move Email" sap:VirtualizedContainerService.HintSize="470,168.66666666666666" sap2010:WorkflowViewState.IdRef="MoveMailX_1" MailFolder="Inbox" MailMessage="[CurrentMail]" />
-                          <If Condition="[CurrentMail.Attachments.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="470,915.3333333333334" sap2010:WorkflowViewState.IdRef="If_2">
+                          <If Condition="[CurrentMail.Attachments.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="470,1032.6666666666667" sap2010:WorkflowViewState.IdRef="If_2">
                             <If.Then>
                               <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,320.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
                                 <sap:WorkflowViewStateService.ViewState>
@@ -150,7 +150,7 @@
                               </Sequence>
                             </If.Then>
                             <If.Else>
-                              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,464" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,581.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="x:String" Name="SenderName" />
                                 </Sequence.Variables>
@@ -159,7 +159,8 @@
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <umab:ReplyToMailX Bcc="{x:Null}" HtmlBodyFromText="{x:Null}" AdditionalCc="mingkai12345678@gmail.com" AdditionalTo="[CurrentMail.Sender.ToString]" Body="EmailTemplate" BodyType="Text" DisplayName="Reply To Email" sap:VirtualizedContainerService.HintSize="434,404" sap2010:WorkflowViewState.IdRef="ReplyToMailX_1" IsDraft="False" MailMessage="[CurrentMail]" MaxBodyDocumentSizeMB="2" NewSubject="Automatic Reply" ReplyToAll="False" UseDocumentAsBody="False">
+                                <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2" />
+                                <umab:ReplyToMailX Bcc="{x:Null}" HtmlBodyFromText="{x:Null}" AdditionalCc="mingkai12345678@gmail.com" AdditionalTo="[Outlook.SelectedAccount]" Body="EmailTemplate" BodyType="Text" DisplayName="Reply To Email" sap:VirtualizedContainerService.HintSize="434,404" sap2010:WorkflowViewState.IdRef="ReplyToMailX_1" IsDraft="False" MailMessage="[CurrentMail]" MaxBodyDocumentSizeMB="2" NewSubject="Automatic Reply" ReplyToAll="False" UseDocumentAsBody="False">
                                   <umab:ReplyToMailX.Files>
                                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                   </umab:ReplyToMailX.Files>
