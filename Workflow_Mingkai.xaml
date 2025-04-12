@@ -165,14 +165,14 @@
                                     <OutArgument x:TypeArguments="x:String">[SelectedAccount]</OutArgument>
                                   </Assign.To>
                                   <Assign.Value>
-                                    <InArgument x:TypeArguments="x:String">wangjelly1205@gmail.com, xiangyudad@gmail.com</InArgument>
+                                    <InArgument x:TypeArguments="x:String">wangjelly1205@gmail.com; xiangyudad@gmail.com; mingkai12345678@gmail.com</InArgument>
                                   </Assign.Value>
                                 </Assign>
-                                <umab:ReplyToMailX Bcc="{x:Null}" HtmlBodyFromText="{x:Null}" AdditionalCc="mingkai12345678@gmail.com" AdditionalTo="[SelectedAccount]" Body="EmailTemplate" BodyType="Text" DisplayName="Reply To Email" sap:VirtualizedContainerService.HintSize="434,404" sap2010:WorkflowViewState.IdRef="ReplyToMailX_1" IsDraft="False" MailMessage="[CurrentMail]" MaxBodyDocumentSizeMB="2" NewSubject="Automatic Reply" ReplyToAll="False" UseDocumentAsBody="False">
-                                  <umab:ReplyToMailX.Files>
+                                <umab:SendMailX Bcc="{x:Null}" Cc="{x:Null}" HtmlBodyFromText="{x:Null}" ReplyTo="{x:Null}" Account="[CurrentMail]" Body="EmailTemplate" BodyType="Text" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="434,404" sap2010:WorkflowViewState.IdRef="SendMailX_1" Importance="Normal" MaxBodyDocumentSizeMB="2" Sensitivity="Normal" Subject="Automatic Send" To="[SelectedAccount]" UseDocumentAsBody="False">
+                                  <umab:SendMailX.Files>
                                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-                                  </umab:ReplyToMailX.Files>
-                                  <umab:ReplyToMailX.HtmlBodyFromFile>
+                                  </umab:SendMailX.Files>
+                                  <umab:SendMailX.HtmlBodyFromFile>
                                     <umabh:HtmlContentArgument FilePath="{x:Null}">
                                       <umabh:HtmlContentArgument.RuntimeImages>
                                         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
@@ -181,8 +181,8 @@
                                         <scg:List x:TypeArguments="umabh:HtmlValueMappingBase" Capacity="0" />
                                       </umabh:HtmlContentArgument.ValueMappings>
                                     </umabh:HtmlContentArgument>
-                                  </umab:ReplyToMailX.HtmlBodyFromFile>
-                                </umab:ReplyToMailX>
+                                  </umab:SendMailX.HtmlBodyFromFile>
+                                </umab:SendMailX>
                               </Sequence>
                             </If.Else>
                           </If>
