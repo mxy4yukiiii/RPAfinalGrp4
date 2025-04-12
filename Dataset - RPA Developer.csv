@@ -1,0 +1,21 @@
+Task_ID,Staff_ID,Staff_Name,Task_Name,Task_Type,Create_Date,End_Date,Difficulty,Success,Bug,Feedback
+T25010201,DI0004,Wang Jiale,Email Parser Automation,Automation,2025-01-02,2025-01-07,1,1,0,4
+T25010301,DI0001,Meng Xiangyu,Chatbot Deployment,UI Interaction,2025-01-03,2025-02-11,3,0,,
+T25010701,DI0003,Li Yuxuan,Monthly Dashboard,Workflow Management,2025-01-07,2025-01-16,2,1,0,4
+T25011401,DI0004,Wang Jiale,Audit Log Formatter,Workflow Management,2025-01-14,2025-01-22,2,1,0,3
+T25011501,DI0003,Li Yuxuan,Weekly Report Generator,Report Generation,2025-01-15,2025-01-20,1,1,0,4
+T25012401,DI0001,Meng Xiangyu,Invoice Automation,UI Interaction,2025-01-24,2025-02-20,3,1,1,5
+T25012402,DI0003,Li Yuxuan,Invoice Automation,UI Interaction,2025-01-24,2025-01-29,1,1,0,5
+T25012801,DI0003,Li Yuxuan,Audit Log Formatter,Workflow Management,2025-01-28,2025-02-07,3,1,0,3
+T25020701,DI0004,Wang Jiale,Purchase Order Matching,Automation,2025-02-07,2025-02-10,1,0,,
+T25021301,DI0003,Li Yuxuan,Contract Extractor,Document Processing,2025-02-13,2025-02-14,1,1,0,5
+T25022101,DI0004,Wang Jiale,Data Scrubber,Data Cleaning,2025-02-21,2025-02-27,1,1,0,3
+T25022801,DI0004,Wang Jiale,Weekly Report Generator,Report Generation,2025-02-28,2025-03-13,1,1,0,3
+T25022802,DI0003,Li Yuxuan,Supplier Risk Monitor,Analytics,2025-02-28,2025-03-07,3,1,0,5
+T25030501,DI0003,Li Yuxuan,Weekly Report Generator,Report Generation,2025-03-05,2025-03-20,2,1,0,3
+T25031401,DI0001,Meng Xiangyu,Audit Log Formatter,Workflow Management,2025-03-14,2025-03-31,2,1,0,5
+T25032001,DI0001,Meng Xiangyu,Purchase Order Matching,Automation,2025-03-20,2025-03-25,2,1,0,3
+T25032101,DI0001,Meng Xiangyu,Purchase Order Matching,Automation,2025-03-21,2025-03-24,1,1,1,5
+T25032501,DI0004,Wang Jiale,Trend Reporting,Report Generation,2025-03-25,2025-03-31,3,0,,
+T25032502,DI0003,Li Yuxuan,Trend Reporting,Report Generation,2025-03-25,2025-03-28,2,1,0,5
+T25032801,DI0001,Meng Xiangyu,Invoice Automation,UI Interaction,2025-03-28,2025-03-31,1,1,1,5
