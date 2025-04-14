@@ -2,7 +2,7 @@
   "name": "FinalProjectGrp4",
   "projectId": "236a6c54-2cd6-42cf-b503-ce9ea240e4fd",
   "description": "Blank Process",
-  "main": "Main.xaml",
+  "main": "Main_Xinyu&Yilin.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.22.3]",
     "UiPath.Mail.Activities": "[1.21.1]",
@@ -50,8 +50,8 @@
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "Main.xaml",
-      "uniqueId": "d956c006-ccca-4436-8a5b-88b38e1cc1b3",
+      "filePath": "Main_Xinyu&Yilin.xaml",
+      "uniqueId": "9fd31af4-e1f1-47de-9831-1f8561e5444f",
       "input": [],
       "output": []
     }
