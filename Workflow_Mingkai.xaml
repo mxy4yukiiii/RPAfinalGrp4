@@ -95,7 +95,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Workflow_MK" sap:VirtualizedContainerService.HintSize="1009.9999999999999,2244.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Workflow_MK" sap:VirtualizedContainerService.HintSize="899.9999999999999,2244.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -165,7 +165,7 @@
                                     <OutArgument x:TypeArguments="x:String">[SelectedAccount]</OutArgument>
                                   </Assign.To>
                                   <Assign.Value>
-                                    <InArgument x:TypeArguments="x:String">wangjelly1205@gmail.com; xiangyudad@gmail.com; mingkai12345678@gmail.com</InArgument>
+                                    <InArgument x:TypeArguments="x:String">mingkai12345678@gmail.com</InArgument>
                                   </Assign.Value>
                                 </Assign>
                                 <umab:SendMailX Bcc="{x:Null}" Cc="{x:Null}" HtmlBodyFromText="{x:Null}" ReplyTo="{x:Null}" Account="[Outlook]" Body="EmailTemplate" BodyType="Text" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="434,404" sap2010:WorkflowViewState.IdRef="SendMailX_1" Importance="Normal" MaxBodyDocumentSizeMB="2" Sensitivity="Normal" Subject="Automatic Send" To="[SelectedAccount]" UseDocumentAsBody="False">
