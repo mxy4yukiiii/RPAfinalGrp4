@@ -160,12 +160,12 @@
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">[SelectedAccount]</OutArgument>
                                   </Assign.To>
                                   <Assign.Value>
-                                    <InArgument x:TypeArguments="x:String">mingkai12345678@gmail.com</InArgument>
+                                    <InArgument x:TypeArguments="x:String">mingkai12345678@gmail.com; justinleeva@gmail.com; xiangyudad@gmail.com; wangjelly1205@gmail.com; IreneT0625@gmail.com; meixinyuyuki@gmail.com</InArgument>
                                   </Assign.Value>
                                 </Assign>
                                 <umab:SendMailX Bcc="{x:Null}" Cc="{x:Null}" HtmlBodyFromText="{x:Null}" ReplyTo="{x:Null}" Account="[Outlook]" Body="EmailTemplate" BodyType="Text" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="434,404" sap2010:WorkflowViewState.IdRef="SendMailX_1" Importance="Normal" MaxBodyDocumentSizeMB="2" Sensitivity="Normal" Subject="Automatic Send" To="[SelectedAccount]" UseDocumentAsBody="False">
