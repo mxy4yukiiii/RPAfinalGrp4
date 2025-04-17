@@ -1,4 +1,13 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Workflow_Yuxuan" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="860,17208.8" sap2010:WorkflowViewState.IdRef="Workflow_Yuxuan_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Workflow_Yuxuan" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_UniqueStaffMonth" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="out_FinalStaffKPI" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>686,17529</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Workflow_Yuxuan_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -94,7 +103,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Workflow_Yuxuan" sap:VirtualizedContainerService.HintSize="696,17144" sap2010:WorkflowViewState.IdRef="Sequence_17">
+  <Sequence DisplayName="Workflow_Yuxuan" sap:VirtualizedContainerService.HintSize="696,17464" sap2010:WorkflowViewState.IdRef="Sequence_17">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_RPA" />
       <Variable x:TypeArguments="sd:DataTable" Name="ProjectsCountByStaff" />
@@ -115,8 +124,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadCsvFile DataTable="[dt_RPA]" Delimitator="Comma" DisplayName="Read CSV" FilePath="Dataset - RPA Developer.csv" sap:VirtualizedContainerService.HintSize="633.6,155.2" sap2010:WorkflowViewState.IdRef="ReadCsvFile_2" />
-    <Assign sap:VirtualizedContainerService.HintSize="633.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_19">
+    <ui:ReadCsvFile DataTable="[dt_RPA]" Delimitator="Comma" DisplayName="Read CSV" FilePath="Dataset - RPA Developer.csv" sap:VirtualizedContainerService.HintSize="634,160" sap2010:WorkflowViewState.IdRef="ReadCsvFile_2" />
+    <Assign sap:VirtualizedContainerService.HintSize="634,84" sap2010:WorkflowViewState.IdRef="Assign_19">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[ProjectsCountByStaff]</OutArgument>
       </Assign.To>
@@ -124,20 +133,20 @@
         <InArgument x:TypeArguments="sd:DataTable">[dt_RPA.DefaultView.ToTable(True, "Staff_ID", "Staff_Name")]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="ProjectsCount" DataTable="[ProjectsCountByStaff]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="633.6,188" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_11" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ProjectsCountByStaff]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="633.6,359.2" sap2010:WorkflowViewState.IdRef="ForEachRow_10">
+    <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="ProjectsCount" DataTable="[ProjectsCountByStaff]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="634,192" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_11" />
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ProjectsCountByStaff]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="634,362" sap2010:WorkflowViewState.IdRef="ForEachRow_10">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_21">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,172" sap2010:WorkflowViewState.IdRef="Sequence_21">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_20">
+            <Assign sap:VirtualizedContainerService.HintSize="434,84" sap2010:WorkflowViewState.IdRef="Assign_20">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Object">[CurrentRow("ProjectsCount")]</OutArgument>
               </Assign.To>
@@ -149,7 +158,7 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <ui:FilterDataTable DataTable="[dt_RPA]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="633.6,162.4" sap2010:WorkflowViewState.IdRef="FilterDataTable_3" OutputDataTable="[dt_success]" SelectColumnsMode="Remove">
+    <ui:FilterDataTable DataTable="[dt_RPA]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="634,165" sap2010:WorkflowViewState.IdRef="FilterDataTable_3" OutputDataTable="[dt_success]" SelectColumnsMode="Remove">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
@@ -168,7 +177,7 @@
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <Assign sap:VirtualizedContainerService.HintSize="633.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_21">
+    <Assign sap:VirtualizedContainerService.HintSize="634,84" sap2010:WorkflowViewState.IdRef="Assign_21">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[ProjectSuccessCountByStaff]</OutArgument>
       </Assign.To>
@@ -176,20 +185,20 @@
         <InArgument x:TypeArguments="sd:DataTable">[dt_RPA.DefaultView.ToTable(True, "Staff_ID", "Staff_Name")]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="SuccessCount" DataTable="[ProjectSuccessCountByStaff]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="633.6,188" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_20" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ProjectSuccessCountByStaff]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="633.6,359.2" sap2010:WorkflowViewState.IdRef="ForEachRow_11">
+    <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="SuccessCount" DataTable="[ProjectSuccessCountByStaff]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="634,192" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_20" />
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ProjectSuccessCountByStaff]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="634,362" sap2010:WorkflowViewState.IdRef="ForEachRow_11">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_22">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,172" sap2010:WorkflowViewState.IdRef="Sequence_22">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_22">
+            <Assign sap:VirtualizedContainerService.HintSize="434,84" sap2010:WorkflowViewState.IdRef="Assign_22">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Object">[CurrentRow("SuccessCount")]</OutArgument>
               </Assign.To>
@@ -201,7 +210,7 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <ui:FilterDataTable DataTable="[dt_RPA]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="633.6,162.4" sap2010:WorkflowViewState.IdRef="FilterDataTable_4" OutputDataTable="[dt_bug]" SelectColumnsMode="Remove">
+    <ui:FilterDataTable DataTable="[dt_RPA]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="634,165" sap2010:WorkflowViewState.IdRef="FilterDataTable_4" OutputDataTable="[dt_bug]" SelectColumnsMode="Remove">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
@@ -228,7 +237,7 @@
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <Assign sap:VirtualizedContainerService.HintSize="633.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_23">
+    <Assign sap:VirtualizedContainerService.HintSize="634,84" sap2010:WorkflowViewState.IdRef="Assign_23">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[ProjectBugCountByStaff]</OutArgument>
       </Assign.To>
@@ -236,7 +245,7 @@
         <InArgument x:TypeArguments="sd:DataTable">[dt_RPA.DefaultView.ToTable(True, "Staff_ID", "Staff_Name")]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="BugCount" DataTable="[ProjectBugCountByStaff]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="633.6,188" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_21" />
+    <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="BugCount" DataTable="[ProjectBugCountByStaff]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="634,192" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_21" />
     <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ProjectBugCountByStaff]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="633.6,359.2" sap2010:WorkflowViewState.IdRef="ForEachRow_12">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
@@ -375,13 +384,13 @@
       </Assign.Value>
     </Assign>
     <ui:AddDataColumn x:TypeArguments="x:Double" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="AvgComplexity" DataTable="[AverageComplexityByStaff]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="633.6,188" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_12" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[AverageComplexityByStaff]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="633.6,1445.6" sap2010:WorkflowViewState.IdRef="ForEachRow_8">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[AverageComplexityByStaff]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="634,1451" sap2010:WorkflowViewState.IdRef="ForEachRow_8">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="553.6,1257.6" sap2010:WorkflowViewState.IdRef="Sequence_19">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="553,1261" sap2010:WorkflowViewState.IdRef="Sequence_19">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataRow[]" Name="matchedRows" />
               <Variable x:TypeArguments="x:Double" Name="sumDifficulty" />
@@ -399,7 +408,7 @@
                 <InArgument x:TypeArguments="sd:DataRow[]">[dt_success.Select("Staff_ID = '" + CurrentRow("Staff_ID").ToString.Trim + "' AND Difficulty &lt;&gt; ''")]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign sap:VirtualizedContainerService.HintSize="510.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_33">
+            <Assign sap:VirtualizedContainerService.HintSize="511,84" sap2010:WorkflowViewState.IdRef="Assign_33">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Double">[sumDifficulty]</OutArgument>
               </Assign.To>
@@ -407,19 +416,19 @@
                 <InArgument x:TypeArguments="x:Double">0</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="510.4,359.2" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[matchedRows]">
+            <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="511,362" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[matchedRows]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="currentItem" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,172" sap2010:WorkflowViewState.IdRef="Sequence_27">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_34">
+                    <Assign sap:VirtualizedContainerService.HintSize="434,84" sap2010:WorkflowViewState.IdRef="Assign_34">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Double">[sumDifficulty]</OutArgument>
                       </Assign.To>
@@ -431,9 +440,9 @@
                 </ActivityAction>
               </ui:ForEach.Body>
             </ui:ForEach>
-            <If Condition="[matchedRows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="510.4,525.6" sap2010:WorkflowViewState.IdRef="If_6">
+            <If Condition="[matchedRows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="511,525" sap2010:WorkflowViewState.IdRef="If_6">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_28">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -726,19 +735,19 @@
       </Assign.Value>
     </Assign>
     <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="TotalOrders" DataTable="[dt_UniqueStaffMonth]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="633.6,188" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_13" />
-    <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="LateOrderCount" DataTable="[dt_UniqueStaffMonth]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="633.6,188" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_14" />
-    <ui:AddDataColumn x:TypeArguments="x:Double" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="TotalOriginal" DataTable="[dt_UniqueStaffMonth]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="633.6,188" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_15" />
-    <ui:AddDataColumn x:TypeArguments="x:Double" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="TotalSaved" DataTable="[dt_UniqueStaffMonth]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="633.6,188" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_19" />
-    <ui:AddDataColumn x:TypeArguments="x:Double" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="SavingPercent" DataTable="[dt_UniqueStaffMonth]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="633.6,188" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_18" />
-    <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="ErrorCount" DataTable="[dt_UniqueStaffMonth]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="633.6,188" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_17" />
-    <ui:AddDataColumn x:TypeArguments="x:Double" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="ErrorRate" DataTable="[dt_UniqueStaffMonth]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="633.6,188" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_16" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_UniqueStaffMonth]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="633.6,2652" sap2010:WorkflowViewState.IdRef="ForEachRow_9">
+    <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="LateOrderCount" DataTable="[dt_UniqueStaffMonth]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="634,192" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_14" />
+    <ui:AddDataColumn x:TypeArguments="x:Double" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="TotalOriginal" DataTable="[dt_UniqueStaffMonth]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="634,192" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_15" />
+    <ui:AddDataColumn x:TypeArguments="x:Double" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="TotalSaved" DataTable="[dt_UniqueStaffMonth]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="634,192" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_19" />
+    <ui:AddDataColumn x:TypeArguments="x:Double" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="SavingPercent" DataTable="[dt_UniqueStaffMonth]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="634,192" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_18" />
+    <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="ErrorCount" DataTable="[dt_UniqueStaffMonth]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="634,192" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_17" />
+    <ui:AddDataColumn x:TypeArguments="x:Double" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="ErrorRate" DataTable="[dt_UniqueStaffMonth]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="634,192" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_16" />
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_UniqueStaffMonth]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="634,2656" sap2010:WorkflowViewState.IdRef="ForEachRow_9">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="600,2464" sap2010:WorkflowViewState.IdRef="Sequence_20">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="599,2466" sap2010:WorkflowViewState.IdRef="Sequence_20">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="dtFiltered" />
               <Variable x:TypeArguments="x:Double" Name="sumOriginal" />
@@ -868,7 +877,7 @@
                 <InArgument x:TypeArguments="x:Object">[sumSaved]</InArgument>
               </Assign.Value>
             </Assign>
-            <If Condition="[sumOriginal &gt; 0]" sap:VirtualizedContainerService.HintSize="556.8,525.6" sap2010:WorkflowViewState.IdRef="If_3">
+            <If Condition="[sumOriginal &gt; 0]" sap:VirtualizedContainerService.HintSize="557,526" sap2010:WorkflowViewState.IdRef="If_3">
               <If.Then>
                 <Sequence sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_34">
                   <sap:WorkflowViewStateService.ViewState>
@@ -904,7 +913,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <Assign sap:VirtualizedContainerService.HintSize="556.8,81.6" sap2010:WorkflowViewState.IdRef="Assign_46">
+            <Assign sap:VirtualizedContainerService.HintSize="557,84" sap2010:WorkflowViewState.IdRef="Assign_46">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Object">[CurrentRow("ErrorCount")]</OutArgument>
               </Assign.To>
@@ -912,9 +921,9 @@
                 <InArgument x:TypeArguments="x:Object">[dtFiltered.Select("Error = 1").Count]</InArgument>
               </Assign.Value>
             </Assign>
-            <If Condition="[dtFiltered.Rows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="556.8,525.6" sap2010:WorkflowViewState.IdRef="If_4">
+            <If Condition="[dtFiltered.Rows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="557,526" sap2010:WorkflowViewState.IdRef="If_4">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_36">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -931,13 +940,13 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                <Sequence sap:VirtualizedContainerService.HintSize="476,172" sap2010:WorkflowViewState.IdRef="Sequence_37">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_48">
+                  <Assign sap:VirtualizedContainerService.HintSize="434,84" sap2010:WorkflowViewState.IdRef="Assign_48">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Object">[CurrentRow("ErrorRate")]</OutArgument>
                     </Assign.To>
@@ -952,7 +961,23 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <ui:OutputDataTable DataTable="[dt_UniqueStaffMonth]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="633.6,80.8" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[strAfterCalculated]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="633.6,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;辅助列计算完成后数据预览：&quot; + vbNewLine + strAfterCalculated]" />
+    <ui:OutputDataTable DataTable="[dt_UniqueStaffMonth]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="634,82" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[strAfterCalculated]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="634,145" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;辅助列计算完成后数据预览：&quot; + vbNewLine + strAfterCalculated]" />
+    <Assign DisplayName="分配" sap:VirtualizedContainerService.HintSize="634,84" sap2010:WorkflowViewState.IdRef="Assign_58">
+      <Assign.To>
+        <OutArgument x:TypeArguments="sd:DataTable">[out_UniqueStaffMonth]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="sd:DataTable">[dt_UniqueStaffMonth]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="分配" sap:VirtualizedContainerService.HintSize="634,84" sap2010:WorkflowViewState.IdRef="Assign_59">
+      <Assign.To>
+        <OutArgument x:TypeArguments="sd:DataTable">[out_FinalStaffKPI]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="sd:DataTable">[FinalStaffKPI]</InArgument>
+      </Assign.Value>
+    </Assign>
   </Sequence>
 </Activity>
