@@ -30,6 +30,7 @@
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Linq.Expressions</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -268,7 +269,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[CInt(row(&quot;TotalOrders&quot;)) &gt;= 85]" DisplayName="IF" sap:VirtualizedContainerService.HintSize="470,474" sap2010:WorkflowViewState.IdRef="If_3">
+            <If Condition="[CInt(row(&quot;TotalOrders&quot;)) &gt;= 30]" DisplayName="IF" sap:VirtualizedContainerService.HintSize="470,474" sap2010:WorkflowViewState.IdRef="If_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
