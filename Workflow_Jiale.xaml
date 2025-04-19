@@ -41,6 +41,7 @@
       <x:String>UiPath.DataTableUtilities</x:String>
       <x:String>UiPath.Excel</x:String>
       <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Linq.Expressions</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -109,13 +110,13 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap:VirtualizedContainerService.HintSize="710,5656" sap2010:WorkflowViewState.IdRef="Sequence_16">
+  <Sequence sap:VirtualizedContainerService.HintSize="618.6666666666666,5052.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_16">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Workflow_Jiale" sap:VirtualizedContainerService.HintSize="648,5545.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence DisplayName="Workflow_Jiale" sap:VirtualizedContainerService.HintSize="588,5030" sap2010:WorkflowViewState.IdRef="Sequence_1">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="staffMonthTable" />
         <Variable x:TypeArguments="sd:DataTable" Name="FinalStaffKPI" />
@@ -127,7 +128,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="586,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_19">
+      <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="554,116.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_19">
         <Assign.To>
           <OutArgument x:TypeArguments="sd:DataTable">[dt_first]</OutArgument>
         </Assign.To>
@@ -135,7 +136,7 @@
           <InArgument x:TypeArguments="sd:DataTable">[in_InnovDepart.Copy]</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="586,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_20">
+      <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="554,116.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_20">
         <Assign.To>
           <OutArgument x:TypeArguments="sd:DataTable">[dt_second]</OutArgument>
         </Assign.To>
@@ -143,9 +144,9 @@
           <InArgument x:TypeArguments="sd:DataTable">[in_Procurement.Copy]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="FirstFinalScore" DataTable="[dt_first]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="586,189.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
-      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="SecondFinalScore" DataTable="[dt_second]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="586,189.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" />
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_first]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="586,1744.6666666666667" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="FirstFinalScore" DataTable="[dt_first]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="554,221.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
+      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="SecondFinalScore" DataTable="[dt_second]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="554,221.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" />
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_first]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="554,1738.6666666666667" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
@@ -263,13 +264,13 @@
           </ActivityAction>
         </ui:ForEachRow.Body>
       </ui:ForEachRow>
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_second]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="586,2630" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_second]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="554,2246" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="正文" sap:VirtualizedContainerService.HintSize="552,2441.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Sequence DisplayName="正文" sap:VirtualizedContainerService.HintSize="504,2063.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_7">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Int32" Name="orderScore" />
                 <Variable x:TypeArguments="x:Int32" Name="saveScore" />
@@ -281,7 +282,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If Condition="[CInt(row(&quot;TotalOrders&quot;)) &gt;= 85]" DisplayName="IF" sap:VirtualizedContainerService.HintSize="510,527.3333333333334" sap2010:WorkflowViewState.IdRef="If_3">
+              <If Condition="[CInt(row(&quot;TotalOrders&quot;)) &gt;= 30]" DisplayName="IF" sap:VirtualizedContainerService.HintSize="470,474" sap2010:WorkflowViewState.IdRef="If_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -289,13 +290,13 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="476,172" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,167.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_8">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="434,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_10">
+                    <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="434,107.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_10">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[orderScore]</OutArgument>
                       </Assign.To>
@@ -306,13 +307,13 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence sap:VirtualizedContainerService.HintSize="476,172" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,167.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_9">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="434,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_11">
+                    <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="434,107.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_11">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[orderScore]</OutArgument>
                       </Assign.To>
@@ -323,15 +324,15 @@
                   </Sequence>
                 </If.Else>
               </If>
-              <If Condition="[CDbl(row(&quot;TotalOriginal&quot;)) &gt; 0 AndAlso CDbl(row(&quot;TotalSaved&quot;)) / CDbl(row(&quot;TotalOriginal&quot;)) &gt; 0.15]" DisplayName="IF" sap:VirtualizedContainerService.HintSize="510,527.3333333333334" sap2010:WorkflowViewState.IdRef="If_4">
+              <If Condition="[CDbl(row(&quot;TotalOriginal&quot;)) &gt; 0 AndAlso CDbl(row(&quot;TotalSaved&quot;)) / CDbl(row(&quot;TotalOriginal&quot;)) &gt; 0.15]" DisplayName="IF" sap:VirtualizedContainerService.HintSize="470,474" sap2010:WorkflowViewState.IdRef="If_4">
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="476,172" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,167.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_10">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="434,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_12">
+                    <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="434,107.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_12">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[saveScore]</OutArgument>
                       </Assign.To>
@@ -342,13 +343,13 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence sap:VirtualizedContainerService.HintSize="476,172" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,167.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_11">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="434,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_13">
+                    <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="434,107.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_13">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[saveScore]</OutArgument>
                       </Assign.To>
@@ -359,15 +360,15 @@
                   </Sequence>
                 </If.Else>
               </If>
-              <If Condition="[CInt(row(&quot;TotalOrders&quot;)) &gt; 0 AndAlso CDbl(row(&quot;LateOrderCount&quot;)) / CInt(row(&quot;TotalOrders&quot;)) &lt;= 0.1]" DisplayName="IF" sap:VirtualizedContainerService.HintSize="510,527.3333333333334" sap2010:WorkflowViewState.IdRef="If_5">
+              <If Condition="[CInt(row(&quot;TotalOrders&quot;)) &gt; 0 AndAlso CDbl(row(&quot;LateOrderCount&quot;)) / CInt(row(&quot;TotalOrders&quot;)) &lt;= 0.1]" DisplayName="IF" sap:VirtualizedContainerService.HintSize="470,474" sap2010:WorkflowViewState.IdRef="If_5">
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="476,172" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,167.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_12">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="434,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_14">
+                    <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="434,107.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_14">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[cycleScore]</OutArgument>
                       </Assign.To>
@@ -378,13 +379,13 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence sap:VirtualizedContainerService.HintSize="476,172" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,167.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_13">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="434,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_15">
+                    <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="434,107.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_15">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[cycleScore]</OutArgument>
                       </Assign.To>
@@ -395,15 +396,15 @@
                   </Sequence>
                 </If.Else>
               </If>
-              <If Condition="[CInt(row(&quot;TotalOrders&quot;)) &gt; 0 AndAlso CDbl(row(&quot;ErrorCount&quot;)) / CInt(row(&quot;TotalOrders&quot;)) &lt;= 0.1]" DisplayName="IF" sap:VirtualizedContainerService.HintSize="510,527.3333333333334" sap2010:WorkflowViewState.IdRef="If_6">
+              <If Condition="[CInt(row(&quot;TotalOrders&quot;)) &gt; 0 AndAlso CDbl(row(&quot;ErrorCount&quot;)) / CInt(row(&quot;TotalOrders&quot;)) &lt;= 0.1]" DisplayName="IF" sap:VirtualizedContainerService.HintSize="470,474" sap2010:WorkflowViewState.IdRef="If_6">
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="476,172" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,167.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_14">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="434,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_16">
+                    <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="434,107.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_16">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[accuracyScore]</OutArgument>
                       </Assign.To>
@@ -414,24 +415,24 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence sap:VirtualizedContainerService.HintSize="476,172" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,167.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_15">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="434,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_17">
+                    <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="434,107.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_17">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[accuracyScore]</OutArgument>
                       </Assign.To>
                       <Assign.Value>
-                        <InArgument x:TypeArguments="x:Int32">40</InArgument>
+                        <InArgument x:TypeArguments="x:Int32">35</InArgument>
                       </Assign.Value>
                     </Assign>
                   </Sequence>
                 </If.Else>
               </If>
-              <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="510,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_18">
+              <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="470,107.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_18">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Object">[row("SecondFinalScore")]</OutArgument>
                 </Assign.To>
@@ -443,8 +444,8 @@
           </ActivityAction>
         </ui:ForEachRow.Body>
       </ui:ForEachRow>
-      <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_first]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="586,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="c" WorkbookPath="output.xlsx" />
-      <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_second]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="586,116" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="d" WorkbookPath="output.xlsx" />
+      <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_first]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="554,148" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="c" WorkbookPath="output.xlsx" />
+      <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_second]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="554,138.66666666666666" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="d" WorkbookPath="output.xlsx" />
     </Sequence>
   </Sequence>
 </Activity>
