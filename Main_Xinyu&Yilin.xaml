@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="545.3333333333334,1532.6666666666667" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="545.3333333333334,1342" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -117,23 +117,23 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflow_Jiale.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,114.66666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflow_Jiale.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_Procurement">
-          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="Procurement" />
-        </InArgument>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_InnovDepart">
-          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="InnovaDepart" />
-        </InArgument>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="KPI_InnovDepart">
-          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="KPIinnov" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="KPI_Procurement">
-          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="KPIprocurement" />
-        </OutArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_Procurement">[Procurement]</InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_InnovDepart">[InnovaDepart]</InArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="KPI_InnovDepart">[KPIinnov]</OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="KPI_Procurement">[KPIprocurement]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflow_Mingkai.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,114.66666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Workflow_Mingkai.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="dtINNOV">
+          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="KPIinnov" />
+        </InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="dtPROCURE">
+          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="KPIprocurement" />
+        </InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="INFO">
+          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_basicInfo" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflow_Xiangyu.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,114.66666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Workflow_Xiangyu.xaml">

@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>700,5908</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>700,5596</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Workflow_Jiale_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -112,13 +112,13 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap:VirtualizedContainerService.HintSize="710,5843.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_16">
+  <Sequence sap:VirtualizedContainerService.HintSize="710,5531.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_16">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Workflow_Jiale" sap:VirtualizedContainerService.HintSize="648,5732.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence DisplayName="Workflow_Jiale" sap:VirtualizedContainerService.HintSize="648,5420.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="staffMonthTable" />
         <Variable x:TypeArguments="sd:DataTable" Name="FinalStaffKPI" />
@@ -459,7 +459,7 @@
             </ui:AssignOperation>
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
               <ui:AssignOperation.To>
-                <OutArgument x:TypeArguments="sd:DataTable">[KPI_InnovDepart]</OutArgument>
+                <OutArgument x:TypeArguments="sd:DataTable">[KPI_Procurement]</OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
                 <InArgument x:TypeArguments="sd:DataTable">[dt_second]</InArgument>
@@ -468,8 +468,6 @@
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
-      <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_first]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="586,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="c" WorkbookPath="output.xlsx" />
-      <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_second]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="586,116" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="d" WorkbookPath="output.xlsx" />
     </Sequence>
   </Sequence>
 </Activity>
