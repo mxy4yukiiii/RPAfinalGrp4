@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="789.3333333333334,2863.3333333333335" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="789.3333333333334,3271.3333333333335" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -100,7 +100,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="668,2798.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="668,3206.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_basicInfo" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_developer" />
@@ -119,7 +119,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:ReadCsvFile DataTable="[dt_basicInfo]" Delimitator="Comma" DisplayName="Read CSV" FilePath="Database\Dataset - BasicInfo.csv" sap:VirtualizedContainerService.HintSize="606,156" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" />
-    <Assign sap:VirtualizedContainerService.HintSize="606,84" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign sap:VirtualizedContainerService.HintSize="606,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[Period]</OutArgument>
       </Assign.To>
@@ -127,7 +127,7 @@
         <InArgument x:TypeArguments="x:String">2025S1</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="606,84" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <Assign sap:VirtualizedContainerService.HintSize="606,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[filePath]</OutArgument>
       </Assign.To>
@@ -135,7 +135,7 @@
         <InArgument x:TypeArguments="x:String">["Database\RawData\"+Period]</InArgument>
       </Assign.Value>
     </Assign>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="606,192" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="606,598" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
         <If Condition="[Not Directory.Exists(Path.Combine(Environment.CurrentDirectory,filePath))]" sap:VirtualizedContainerService.HintSize="410,362" sap2010:WorkflowViewState.IdRef="If_4">
           <If.Then>
@@ -160,7 +160,7 @@
         </If>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21.333333333333332" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="414.6666666666667,21.333333333333332" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -171,7 +171,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="450,253.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <Sequence sap:VirtualizedContainerService.HintSize="450,385.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_10">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -184,7 +184,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:ForEachFileX DisplayName="For Each File in Folder" Filter="*.csv" Folder="[filePath]" sap:VirtualizedContainerService.HintSize="606,1393.3333333333333" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="True">
+    <ui:ForEachFileX DisplayName="For Each File in Folder" Filter="*.csv" Folder="[filePath]" sap:VirtualizedContainerService.HintSize="606,1394" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="True">
       <ui:ForEachFileX.Body>
         <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
           <ActivityAction.Argument1>
@@ -193,13 +193,13 @@
           <ActivityAction.Argument2>
             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
           </ActivityAction.Argument2>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="572,1128" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="572,1128.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="510,84" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign sap:VirtualizedContainerService.HintSize="510,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[filename]</OutArgument>
               </Assign.To>
@@ -253,39 +253,23 @@
         </ActivityAction>
       </ui:ForEachFileX.Body>
     </ui:ForEachFileX>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflow_Yuxuan.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="606,114.66666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Workflow_Yuxuan.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="2Workflow_DataPreprocess+DataCleaning.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="606,114.66666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="2Workflow_DataPreprocess+DataCleaning.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_UniqueStaffMonth">
-          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="Procurement" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_FinalStaffKPI">
-          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="InnovaDepart" />
-        </OutArgument>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_RPAdeveloper">
-          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_developer" />
-        </InArgument>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_ProcurementStaff">
-          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_procurement" />
-        </InArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_UniqueStaffMonth">[Procurement]</OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_FinalStaffKPI">[InnovaDepart]</OutArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_RPAdeveloper">[dt_developer]</InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_ProcurementStaff">[dt_procurement]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflow_Jiale.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="606,114.66666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflow_Jiale.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="3Workflow_CalculateKPI-Indicators.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="606,114.66666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="3Workflow_CalculateKPI-Indicators.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_Procurement">
-          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="Procurement" />
-        </InArgument>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_InnovDepart">
-          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="InnovaDepart" />
-        </InArgument>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="KPI_InnovDepart">
-          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="KPIinnov" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="KPI_Procurement">
-          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="KPIprocurement" />
-        </OutArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_Procurement">[Procurement]</InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_InnovDepart">[InnovaDepart]</InArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="KPI_InnovDepart">[KPIinnov]</OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="KPI_Procurement">[KPIprocurement]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflow_Mingkai.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="606,114.66666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Workflow_Mingkai.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="4Workflow_ArchiveDoc+SendEmailToBoss.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="606,114.66666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="4Workflow_ArchiveDoc+SendEmailToBoss.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="sd:DataTable" x:Key="dtINNOV">[KPIinnov]</InArgument>
         <InArgument x:TypeArguments="sd:DataTable" x:Key="dtPROCURE">[KPIprocurement]</InArgument>
@@ -293,20 +277,12 @@
         <InArgument x:TypeArguments="x:String" x:Key="in_period">[Period]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflow_Xiangyu.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="606,114.66666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Workflow_Xiangyu.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="5Workflow_SendKPI-ReportToAllEmployees.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="606,114.66666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="5Workflow_SendKPI-ReportToAllEmployees.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="dtINNOV">
-          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="KPIinnov" />
-        </InArgument>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="dtPROCURE">
-          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="KPIprocurement" />
-        </InArgument>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="INFO">
-          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_basicInfo" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_period">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Period" />
-        </InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="dtINNOV">[KPIinnov]</InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="dtPROCURE">[KPIprocurement]</InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="INFO">[dt_basicInfo]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_period">[Period]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>
