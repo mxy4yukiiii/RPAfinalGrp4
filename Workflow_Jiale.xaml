@@ -171,7 +171,7 @@
                   <OutArgument x:TypeArguments="x:Double">[projectEffScore]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:Double">[CDbl(row("ProjectsCount")) / 9 * 30]</InArgument>
+                  <InArgument x:TypeArguments="x:Double">[CDbl(row("ProjectsCount"))*CDbl(row("AvgComplexity")) / 9 * 30]</InArgument>
                 </Assign.Value>
               </Assign>
               <If Condition="[CDbl(row(&quot;ProjectsCount&quot;)) = 0]" DisplayName="IF" sap:VirtualizedContainerService.HintSize="510,527.3333333333334" sap2010:WorkflowViewState.IdRef="If_1">

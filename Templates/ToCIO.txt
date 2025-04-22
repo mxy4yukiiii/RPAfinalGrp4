@@ -1,0 +1,6 @@
+Dear {0},
+
+Please check the KPI reports of all employees in {1}. 
+
+Regards,
+Report Generation Robot

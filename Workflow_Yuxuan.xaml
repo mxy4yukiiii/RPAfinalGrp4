@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>683.3333333333334,17349.333333333332</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>683.3333333333334,16854</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Workflow_Yuxuan_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -107,7 +107,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Workflow_Yuxuan" sap:VirtualizedContainerService.HintSize="631.3333333333334,15151.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_17">
+  <Sequence DisplayName="Workflow_Yuxuan" sap:VirtualizedContainerService.HintSize="693.3333333333334,16789.333333333332" sap2010:WorkflowViewState.IdRef="Sequence_17">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_RPA" />
       <Variable x:TypeArguments="sd:DataTable" Name="ProjectsCountByStaff" />
@@ -128,7 +128,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="631.3333333333334,116.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_61">
+    <Assign sap:VirtualizedContainerService.HintSize="631.3333333333334,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_61">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[dt_RPA]</OutArgument>
       </Assign.To>
@@ -136,7 +136,7 @@
         <InArgument x:TypeArguments="sd:DataTable">[in_RPAdeveloper.Copy]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="631.3333333333334,116.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_19">
+    <Assign sap:VirtualizedContainerService.HintSize="631.3333333333334,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_19">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[ProjectsCountByStaff]</OutArgument>
       </Assign.To>
@@ -144,8 +144,8 @@
         <InArgument x:TypeArguments="sd:DataTable">[dt_RPA.DefaultView.ToTable(True, "Staff_ID", "Staff_Name")]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="ProjectsCount" DataTable="[ProjectsCountByStaff]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="631.3333333333334,221.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_11" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ProjectsCountByStaff]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="631.3333333333334,354.6666666666667" sap2010:WorkflowViewState.IdRef="ForEachRow_10">
+    <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="ProjectsCount" DataTable="[ProjectsCountByStaff]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="631.3333333333334,189.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_11" />
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ProjectsCountByStaff]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="631.3333333333334,360.6666666666667" sap2010:WorkflowViewState.IdRef="ForEachRow_10">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -286,7 +286,7 @@
         <OutArgument x:TypeArguments="sd:DataTable">[AverageFeedbackByStaff]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="sd:DataTable">[dt_RPA.copy.DefaultView.ToTable(True, "Staff_ID", "Staff_Name")]</InArgument>
+        <InArgument x:TypeArguments="sd:DataTable">[dt_RPA.DefaultView.ToTable(True, "Staff_ID", "Staff_Name")]</InArgument>
       </Assign.Value>
     </Assign>
     <ui:AddDataColumn x:TypeArguments="x:Double" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="AvgFeedback" DataTable="[AverageFeedbackByStaff]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="631.3333333333334,189.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_22" />
@@ -416,7 +416,7 @@
                 <OutArgument x:TypeArguments="sd:DataRow[]">[matchedRows]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="sd:DataRow[]">[dt_success.Select("Staff_ID = '" + CurrentRow("Staff_ID").ToString.Trim + "' AND Difficulty &lt;&gt; ''")]</InArgument>
+                <InArgument x:TypeArguments="sd:DataRow[]">[dt_RPA.Select("Staff_ID = '" + CurrentRow("Staff_ID").ToString.Trim + "' AND Difficulty &lt;&gt; ''")]</InArgument>
               </Assign.Value>
             </Assign>
             <Assign sap:VirtualizedContainerService.HintSize="510,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_33">
