@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>789.3333333333334,2480</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>789.3333333333334,2890</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Workflow_Xiangyu_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -114,13 +114,14 @@
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Workflow_Xiangyu" sap:VirtualizedContainerService.HintSize="668,2826" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Workflow_Xiangyu" sap:VirtualizedContainerService.HintSize="668,2825.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="KPI1" />
       <Variable x:TypeArguments="sd:DataTable" Name="KPI2" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtEMAIL" />
       <Variable x:TypeArguments="x:String" Name="KPIperiod" />
       <Variable x:TypeArguments="x:String" Name="toStaff" />
+      <Variable x:TypeArguments="x:String" Name="rowText" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -166,50 +167,51 @@
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
     <ui:ReadTextFile File="{x:Null}" Content="[toStaff]" DisplayName="Read Text File" FileName="Templates\ToStaff.txt" sap:VirtualizedContainerService.HintSize="606,81.33333333333333" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[KPI1]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="606,2345.3333333333335" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[KPI1]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="606,2344.6666666666665" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="572,2156.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="572,2156" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="staffID" />
               <Variable x:TypeArguments="x:String" Name="staffName" />
               <Variable x:TypeArguments="x:String" Name="staffEmail" />
-              <Variable x:TypeArguments="x:String" Name="rowText" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="530,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign sap:VirtualizedContainerService.HintSize="530,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_5">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[rowText]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">{</InArgument>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
               </Assign.Value>
             </Assign>
-            <ui:ForEach x:TypeArguments="sd:DataColumn" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="530,360.6666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[KPI1.Columns]">
+            <ui:ForEach x:TypeArguments="sd:DataColumn" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="530,360" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[KPI1.Columns]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="sd:DataColumn">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataColumn" Name="currentItem" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,172" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,171.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign sap:VirtualizedContainerService.HintSize="434,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign sap:VirtualizedContainerService.HintSize="434,84" sap2010:WorkflowViewState.IdRef="Assign_2">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[rowText]</OutArgument>
                       </Assign.To>
                       <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">[rowText &amp; """" &amp; currentItem.ColumnName &amp; """: """ &amp; CurrentRow(currentItem.ColumnName).ToString() &amp; """, \n"]</InArgument>
+                        <InArgument x:TypeArguments="x:String" xml:space="preserve">[rowText &amp; "    " &amp; currentItem.ColumnName &amp; ": " &amp; CurrentRow(currentItem.ColumnName).ToString() &amp; Environment.NewLine]</InArgument>
                       </Assign.Value>
                     </Assign>
                   </Sequence>
@@ -221,7 +223,7 @@
                 <OutArgument x:TypeArguments="x:String">[rowText]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[rowText.TrimEnd({","c, " "c, ControlChars.Lf, ControlChars.Cr}) &amp; "}"]</InArgument>
+                <InArgument x:TypeArguments="x:String">[rowText.TrimEnd({","c, " "c, ControlChars.Lf, ControlChars.Cr})]</InArgument>
               </Assign.Value>
             </Assign>
             <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="530,91.33333333333333" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[rowText]" />
