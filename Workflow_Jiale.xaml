@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>700,5596</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>789.3333333333334,5596</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Workflow_Jiale_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -259,7 +259,7 @@
                   <OutArgument x:TypeArguments="x:Object">[row("FinalScore")]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:Object">[projectEffScore + successScore + errorScore + feedbackScore]</InArgument>
+                  <InArgument x:TypeArguments="x:Double">[math.Round(projectEffScore + successScore + errorScore + feedbackScore,2)]</InArgument>
                 </Assign.Value>
               </Assign>
             </Sequence>
@@ -439,7 +439,7 @@
                   <OutArgument x:TypeArguments="x:Object">[row("FinalScore")]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:Object">[orderScore + cycleScore + saveScore + accuracyScore]</InArgument>
+                  <InArgument x:TypeArguments="x:Decimal">[math.Round(orderScore + cycleScore + saveScore + accuracyScore,2)]</InArgument>
                 </Assign.Value>
               </Assign>
             </Sequence>
