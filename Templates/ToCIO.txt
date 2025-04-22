@@ -1,6 +1,6 @@
 Dear {0},
 
-Please check the KPI reports of all employees in {1}. 
+Please find the KPI reports for all employees for {1} attached. Kindly review them at your convenience.
 
-Regards,
-Report Generation Robot
+Best regards,  
+KPI Report Bot

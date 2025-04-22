@@ -146,8 +146,8 @@
           <InArgument x:TypeArguments="sd:DataTable">[in_Procurement.Copy]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="FirstFinalScore" DataTable="[dt_first]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="586,189.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
-      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="SecondFinalScore" DataTable="[dt_second]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="586,189.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" />
+      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="FinalScore" DataTable="[dt_first]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="586,189.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
+      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="FinalScore" DataTable="[dt_second]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="586,189.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" />
       <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_first]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="586,1744.6666666666667" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
@@ -256,7 +256,7 @@
               </Assign>
               <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="510,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_7">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:Object">[row("FirstFinalScore")]</OutArgument>
+                  <OutArgument x:TypeArguments="x:Object">[row("FinalScore")]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:Object">[projectEffScore + successScore + errorScore + feedbackScore]</InArgument>
@@ -436,7 +436,7 @@
               </If>
               <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="510,84.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_18">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:Object">[row("SecondFinalScore")]</OutArgument>
+                  <OutArgument x:TypeArguments="x:Object">[row("FinalScore")]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:Object">[orderScore + cycleScore + saveScore + accuracyScore]</InArgument>

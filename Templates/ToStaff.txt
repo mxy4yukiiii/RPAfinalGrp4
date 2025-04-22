@@ -1,0 +1,10 @@
+Hi {0},
+
+Here is your KPI summary for {1}:
+
+{2}
+
+Thank you for your continued contributions to the team. Let's keep up the great work in the next quarter!
+
+Best regards,
+KPI Report Bot
