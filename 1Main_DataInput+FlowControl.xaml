@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="789.3333333333334,3271.3333333333335" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="658,3271.3333333333335" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -207,7 +207,7 @@
                 <InArgument x:TypeArguments="x:String">[CurrentFile.Name.ToString]</InArgument>
               </Assign.Value>
             </Assign>
-            <If Condition="[filename.Contains(&quot;CIO&quot;)]" sap:VirtualizedContainerService.HintSize="510,426.6666666666667" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[filename.Contains(&quot;DI&quot;)]" sap:VirtualizedContainerService.HintSize="510,426.6666666666667" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
                 <Sequence sap:VirtualizedContainerService.HintSize="476,243.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
@@ -228,7 +228,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <If Condition="[filename.Contains(&quot;Procuremen&quot;)]" sap:VirtualizedContainerService.HintSize="510,426.6666666666667" sap2010:WorkflowViewState.IdRef="If_3">
+            <If Condition="[filename.Contains(&quot;Procurement&quot;)]" sap:VirtualizedContainerService.HintSize="510,426.6666666666667" sap2010:WorkflowViewState.IdRef="If_3">
               <If.Then>
                 <Sequence sap:VirtualizedContainerService.HintSize="476,243.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
@@ -269,7 +269,7 @@
         <OutArgument x:TypeArguments="sd:DataTable" x:Key="KPI_Procurement">[KPIprocurement]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="4Workflow_ArchiveDoc+SendEmailToBoss.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="606,114.66666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="4Workflow_ArchiveDoc+SendEmailToBoss.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="4Workflow_ArchiveDoc+SendEmailToHR.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="606,114.66666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="4Workflow_ArchiveDoc+SendEmailToHR.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="sd:DataTable" x:Key="dtINNOV">[KPIinnov]</InArgument>
         <InArgument x:TypeArguments="sd:DataTable" x:Key="dtPROCURE">[KPIprocurement]</InArgument>

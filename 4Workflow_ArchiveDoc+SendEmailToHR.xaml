@@ -132,9 +132,9 @@
       <Variable x:TypeArguments="sd:DataTable" Name="KPI1" />
       <Variable x:TypeArguments="sd:DataTable" Name="KPI2" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtEMAIL" />
-      <Variable x:TypeArguments="sd:DataTable" Name="dtCIO" />
-      <Variable x:TypeArguments="x:String" Name="toCIO" />
       <Variable x:TypeArguments="x:String" Name="KPIperiod" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtHR" />
+      <Variable x:TypeArguments="x:String" Name="toHR" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -181,16 +181,16 @@
     </ui:MultipleAssign>
     <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[KPI1]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="606,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Innovation Department" WorkbookPath="[&quot;Database\KPIData\KPI_&quot;+KPIperiod+&quot;.xlsx&quot;]" />
     <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[KPI2]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="606,116" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Procurement Department" WorkbookPath="[&quot;Database\KPIData\KPI_&quot;+KPIperiod+&quot;.xlsx&quot;]" />
-    <ui:ReadTextFile File="{x:Null}" Content="[toCIO]" DisplayName="Read Text File" FileName="Templates\ToCIO.txt" sap:VirtualizedContainerService.HintSize="606,81.33333333333333" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
-    <ui:FilterDataTable DataTable="[dtEMAIL]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="606,162.66666666666666" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dtCIO]" SelectColumnsMode="Remove">
+    <ui:ReadTextFile File="{x:Null}" Content="[toHR]" DisplayName="Read Text File" FileName="Templates\ToHR.txt" sap:VirtualizedContainerService.HintSize="606,81.33333333333333" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+    <ui:FilterDataTable DataTable="[dtEMAIL]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="606,162.66666666666666" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dtHR]" SelectColumnsMode="Remove">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
-          <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+          <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
             <ui:FilterOperationArgument.Column>
               <InArgument x:TypeArguments="x:String">["Position"]</InArgument>
             </ui:FilterOperationArgument.Column>
             <ui:FilterOperationArgument.Operand>
-              <InArgument x:TypeArguments="x:String">["CIO"]</InArgument>
+              <InArgument x:TypeArguments="x:String">["HR"]</InArgument>
             </ui:FilterOperationArgument.Operand>
           </ui:FilterOperationArgument>
         </scg:List>
@@ -201,7 +201,7 @@
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCIO]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="606,1160.6666666666667" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtHR]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="606,1160.6666666666667" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -251,7 +251,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <umab:SendMailX Bcc="{x:Null}" Cc="{x:Null}" HtmlBodyFromText="{x:Null}" ReplyTo="{x:Null}" Account="[Outlook]" Body="[String.Format(toCIO, receiver, KPIperiod)]" BodyType="Text" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="434,400.6666666666667" sap2010:WorkflowViewState.IdRef="SendMailX_2" Importance="Normal" IsDraft="False" MaxBodyDocumentSizeMB="2" Sensitivity="Normal" Subject="[&quot;KPI Reports of &quot;+KPIperiod]" To="[email]" UseDocumentAsBody="False">
+                    <umab:SendMailX Bcc="{x:Null}" Cc="{x:Null}" HtmlBodyFromText="{x:Null}" ReplyTo="{x:Null}" Account="[Outlook]" Body="[String.Format(toHR, receiver, KPIperiod)]" BodyType="Text" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="434,400.6666666666667" sap2010:WorkflowViewState.IdRef="SendMailX_2" Importance="Normal" IsDraft="False" MaxBodyDocumentSizeMB="2" Sensitivity="Normal" Subject="[&quot;KPI Reports for &quot;+KPIperiod]" To="[email]" UseDocumentAsBody="False">
                       <umab:SendMailX.Files>
                         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="1">
                           <InArgument x:TypeArguments="x:String">["Database\KPIData\KPI_"+KPIperiod+".xlsx"]</InArgument>

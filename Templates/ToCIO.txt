@@ -1,6 +1,0 @@
-Dear {0},
-
-Please find the KPI reports for all employees for {1} attached. Kindly review them at your convenience.
-
-Best regards,  
-KPI Report Bot
